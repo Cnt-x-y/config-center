@@ -1,14 +1,28 @@
 server:
   port: 1115
+spring:
+  profiles:
+    active: prod
+  application:
+    name: product-center
+  cloud:
+    config:
+      label: master
+      profile: prod
+      uri: http://localhost:1119
+      name: config-prod
+      discovery:
+        serviceId: config-center
+        enabled: true
 #Eureka
 eureka:
   instance:
-    preferIpAddress: true
+    prefer-ip-address: true
     hostname: ${spring.cloud.client.ip-address}
     instanceId: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}
   client:
     serviceUrl:
       defaultZone: http://registry-center:1111/eureka/
-spring:
-  application:
-    name: product-center
+
+xtt:
+  name: product-center-prod-xtt
