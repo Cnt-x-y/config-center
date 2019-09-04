@@ -21,4 +21,4 @@ feign:
     enabled: true
 
 xtt:
-  name: prod-xtt
+  name: manager-prod-xtt

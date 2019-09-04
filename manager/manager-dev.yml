@@ -21,4 +21,4 @@ feign:
     enabled: true
 
 xtt:
-  name: dev-xtt
+  name: manager-dev-xtt
