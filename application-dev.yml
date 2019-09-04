@@ -1,2 +1,33 @@
+server:
+  port: 1114
+spring:
+  profiles:
+    active: dev
+  application:
+    name: manager
+  cloud:
+    config:
+      label: master
+      profile: dev
+      uri: http://localhost:1119
+      name: config-prod
+      discovery:
+        serviceId: config-center
+        enabled: true
+#Eureka
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: ${spring.cloud.client.ip-address}
+    instanceId: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}
+  client:
+    serviceUrl:
+      defaultZone: http://registry-center:1111/eureka/
+
+#feign
+feign:
+  hystrix:
+    enabled: true
+
 xtt:
- name: dev-xtt
+  name: dev-xtt
