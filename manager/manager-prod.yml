@@ -5,6 +5,23 @@ spring:
     active: prod
   application:
     name: manager
+  rabbitmq: #rabbitmq配置 ,配置类 RabbitAutoConfiguration
+    host: 192.168.0.178
+    port: 5672
+    username: xtt
+    password: 123456
+    virtualHost: xiaopangche
+    connection-timeout: 10000 #10s
+    publisherConfirms: true #确认回调
+    publisherReturns: true #返回回调
+    cache:
+      channel:
+        size: 50 #缓存的通道数量
+    listener:
+      simple:
+        acknowledge-mode: manual #手动应答
+        retry:
+          enabled: true #支持重试 默认3次
 #Eureka
 eureka:
   instance:
