@@ -22,11 +22,6 @@ spring:
         acknowledge-mode: manual #手动应答
         retry:
           enabled: true #支持重试 默认3次
-management:
-  endpoint:
-    web:
-      exposure:
-        include: *
 #Eureka
 eureka:
   instance:
