@@ -22,6 +22,11 @@ zuul:
     manager:
       path: /manager/**
       serviceId: manager
+    #商品中心
     product-center:
       path: /product-center/**
       serviceId: product-center
+    #配置中心
+    config-center:
+      path: /config-center/**
+      serviceId: config-center
