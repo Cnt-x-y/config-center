@@ -16,4 +16,4 @@ eureka:
       defaultZone: http://registry-center:1111/eureka/
 
 xtt:
-  name: product-center-dev-v1.0-xtt
+  name: product-center-dev-v2.0-xtt
